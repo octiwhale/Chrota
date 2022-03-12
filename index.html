@@ -1,0 +1,92 @@
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script type='text/javascript'>
+      var answerArray = new Array("Genius is one percent inspiration and ninety-nine percent perspiration", "You can observe a lot just by watching", "A house divided against itself cannot stand", "Difficulties increase the nearer we get to the goal ", "Be the chief but never the lord", "Nothing happens unless first we dream", "Well begun is half done", "Life is a learning experience only if you learn", "Self-complacency is fatal to progress", "Peace comes from within  Do not seek it without", "What you give is what you get")
+
+      function getAnswer() {
+        console.log("Quote generated!");
+        window.navigator.vibrate(75); // Just to spoil our Android users ;)
+        document.getElementById('someQuote').innerHTML =
+          answerArray[Math.floor(Math.random() * answerArray.length)];
+      }
+
+      function aboutPopup() {
+        alert("𝗖𝗿𝗲𝗮𝘁𝗲𝗱 𝗕𝘆\nEvan Tanner\n@electricscootergeek");
+      }
+
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+      #unimportantField {
+        visibility: hidden;
+      }
+
+      body {
+        background-color: black;
+        color: white;
+        text-align: center;
+        font-family: Roboto;
+        -webkit-user-select: none;
+      }
+
+      .submitbutton {
+        display: inline-block;
+        font-family: Roboto;
+        padding: 0.3em 1em;
+        text-decoration: none;
+        color: white;
+        border: solid 2px #67c5ff;
+        border-radius: 3px;
+        transition: .4s;
+        background-color: black;
+      }
+
+      .submitbutton:hover {
+        border: solid 2px #6783ff;
+      }
+
+      .quote {
+        font-weight: 300;
+        font-size: 8vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%)
+      }
+
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        color: #878787;
+        text-align: center;
+      }
+
+      i:hover {
+        color: #c2c2c2;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <input id='unimportantField' type='text' /><br />
+    <div class="new">
+      <input type='submit' class="submitbutton" value='+ New Quote' onclick='getAnswer()' />
+    </div>
+    <div id='someQuote' class="quote"></div>
+    <div class="footer">
+      <a onclick="aboutPopup()"><i class="fa fa-info-circle" aria-hidden="true"></i><br><br>
+      </a>
+    </div>
+
+    </div>
+  </body>
+
+</html>
